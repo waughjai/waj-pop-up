@@ -19,16 +19,19 @@
 		{
 			public function __construct()
 			{
+				$this->done = false;
+
 				add_action
 				(
 					'the_post',
 					function()
 					{
-						if ( is_front_page() )
+						if ( is_front_page() && !$this->done )
 						{
 							$this->printContent();
 							$this->loadScript();
 							$this->loadStyle();
+							$this->done = true;
 						}
 					}
 				);
@@ -92,6 +95,8 @@
 			{
 				return self::ID . '-' . $type;
 			}
+
+			private $done;
 
 			const SCRIPT_LOCAL = 'js/main.js';
 			const STYLE_LOCAL  = 'css/main.css';
