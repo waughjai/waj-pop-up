@@ -9,5 +9,5 @@
 	document.body.appendChild( div );
 
 	$( '#' + ID ).click( function() { $( this ).fadeOut(); } );
-	$( '#' + ID + '-box' ).click( function() { $( '#' . ID ).fadeOut(); } );
+	$( '#' + ID + '-close' ).click( function() { $( '#' . ID ).fadeOut(); } );
 })();
