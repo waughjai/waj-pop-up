@@ -13,7 +13,10 @@
 
 	namespace WaughJ\PopUp
 	{
-		new PopUp();
+		if ( is_front_page() )
+		{
+			new PopUp();
+		}
 
 		class PopUp
 		{
