@@ -25,8 +25,15 @@
 
 			private function loadScript() : void
 			{
-				wp_register_script( 'waj-pop-up', $this->getScriptURI() );
-				wp_enqueue_script( 'waj-pop-up' );
+				add_action
+				(
+					'wp_footer',
+					function()
+					{
+						wp_register_script( 'waj-pop-up', $this->getScriptURI() );
+						wp_enqueue_script( 'waj-pop-up' );
+					}
+				)
 			}
 
 			private function loadStyle() : void
