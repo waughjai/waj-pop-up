@@ -10,3 +10,32 @@
 	License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain:  waj-pop-up
 	*/
+
+	namespace WaughJ\PopUp
+	{
+		new PopUp();
+
+		class PopUp
+		{
+			public function __construct()
+			{
+				$this->loadScript();
+				$this->loadStyle();
+			}
+
+			private function loadScript() : void
+			{
+				wp_register_script( 'waj-pop-up', $this->getScriptURI() );
+				wp_enqueue_script( 'waj-pop-up' );
+			}
+
+			private function loadStyle() : void
+			{
+			}
+
+			private function getScriptURI() : string
+			{
+				return plugin_url( 'js/main.js', dirname( __FILE__ ) );
+			}
+		}
+	}
