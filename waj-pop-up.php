@@ -26,6 +26,7 @@
 					{
 						if ( is_front_page() )
 						{
+							$this->printContent();
 							$this->loadScript();
 							$this->loadStyle();
 						}
