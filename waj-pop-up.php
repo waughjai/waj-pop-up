@@ -13,10 +13,7 @@
 
 	namespace WaughJ\PopUp
 	{
-		if ( is_front_page() )
-		{
-			new PopUp();
-		}
+		new PopUp();
 
 		class PopUp
 		{
@@ -30,11 +27,21 @@
 			{
 				add_action
 				(
-					'wp_footer',
+					'the_post',
 					function()
 					{
-						wp_register_script( 'waj-pop-up', $this->getScriptURI() );
-						wp_enqueue_script( 'waj-pop-up' );
+						if ( is_front_page() )
+						{
+							add_action
+							(
+								'wp_footer',
+								function()
+								{
+									wp_register_script( 'waj-pop-up', $this->getScriptURI() );
+									wp_enqueue_script( 'waj-pop-up' );
+								}
+							);
+						}
 					}
 				);
 			}
