@@ -37,7 +37,7 @@
 								'wp_footer',
 								function()
 								{
-									wp_register_script( 'waj-pop-up', $this->getScriptURI() );
+									wp_register_script( 'waj-pop-up', $this->getScriptURI(), [], $this->getScriptVersion() );
 									wp_enqueue_script( 'waj-pop-up' );
 								}
 							);
@@ -53,6 +53,16 @@
 			private function getScriptURI() : string
 			{
 				return plugins_url( 'js/main.js', __FILE__ );
+			}
+
+			private function getScriptVersion() : string
+			{
+				return ( string )( filemtime( $this->getScriptFileLocation() ) );
+			}
+
+			private function getScriptFileLocation() : string
+			{
+				return plugin_dir_path( __FILE__ ) . 'js/main.js';
 			}
 		}
 	}
