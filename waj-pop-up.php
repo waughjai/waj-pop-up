@@ -52,7 +52,7 @@
 
 			private function getScriptURI() : string
 			{
-				return plugins_url( 'js/main.js', __FILE__ );
+				return plugins_url( self::SCRIPT_LOCAL, __FILE__ );
 			}
 
 			private function getScriptVersion() : string
@@ -62,7 +62,9 @@
 
 			private function getScriptFileLocation() : string
 			{
-				return plugin_dir_path( __FILE__ ) . 'js/main.js';
+				return plugin_dir_path( __FILE__ ) . self::SCRIPT_LOCAL;
 			}
+
+			const SCRIPT_LOCAL = 'js/main.js';
 		}
 	}
