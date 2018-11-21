@@ -35,7 +35,7 @@
 
 			private function getScriptURI() : string
 			{
-				return plugin_url( 'js/main.js', dirname( __FILE__ ) );
+				return plugins_url( 'js/main.js', dirname( __FILE__ ) );
 			}
 		}
 	}
