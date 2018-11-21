@@ -8,6 +8,5 @@
 		'<p>We wish you a Happy Thanksgiving!</p><button id="' + ID + '-close" class="' + ID + '-close">Close message</button>';
 	document.body.appendChild( div );
 
-	$( '#' + ID ).click( function() { $( this ).fadeOut(); } );
 	$( '#' + ID + '-close' ).click( function() { $( '#' . ID ).fadeOut(); } );
 })();
