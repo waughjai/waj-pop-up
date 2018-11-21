@@ -7,4 +7,13 @@
 	div.innerHTML = '<div class="' + ID + '-box"><h2>Lincoln South Food Hall will be closed all day this Thanksgiving</h2>' +
 		'<p>We wish you a Happy Thanksgiving!</p>';
 	document.body.appendChild( div );
+
+	document.getElementById( ID ).addEventListener
+	(
+		'click',
+		function( e )
+		{
+			document.body.removeChild( e.currentTarget );
+		}
+	);
 })();
