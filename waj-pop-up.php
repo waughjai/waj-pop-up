@@ -19,12 +19,6 @@
 		{
 			public function __construct()
 			{
-				$this->loadScript();
-				$this->loadStyle();
-			}
-
-			private function loadScript() : void
-			{
 				add_action
 				(
 					'the_post',
@@ -32,22 +26,36 @@
 					{
 						if ( is_front_page() )
 						{
-							add_action
-							(
-								'wp_footer',
-								function()
-								{
-									wp_register_script( 'waj-pop-up', $this->getFileURI( self::SCRIPT_LOCAL ), [], $this->getFileVersion( self::SCRIPT_LOCAL ) );
-									wp_enqueue_script( 'waj-pop-up' );
-								}
-							);
+							$this->loadScript();
+							$this->loadStyle();
 						}
+					}
+				);
+			}
+
+			private function loadScript() : void
+			{
+				add_action
+				(
+					'wp_footer',
+					function()
+					{
+						wp_register_script( 'waj-pop-up', $this->getFileURI( self::SCRIPT_LOCAL ), [], $this->getFileVersion( self::SCRIPT_LOCAL ) );
+						wp_enqueue_script( 'waj-pop-up' );
 					}
 				);
 			}
 
 			private function loadStyle() : void
 			{
+				add_action
+				(
+					'wp_footer',
+					function()
+					{
+						wp_enqueue_style( 'waj-pop-up', $this->getFileURI( self::STYLE_LOCAL ), [], $this->getFileVersion( self::STYLE_LOCAL ) );
+					}
+				);
 			}
 
 			private function getFileURI( string $local ) : string
@@ -66,5 +74,6 @@
 			}
 
 			const SCRIPT_LOCAL = 'js/main.js';
+			const STYLE_LOCAL  = 'css/main.css';
 		}
 	}
