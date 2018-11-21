@@ -8,11 +8,4 @@
 			$( this ).fadeOut();
 		}
 	);
-	$( '#' + ID + '-close' ).click
-	(
-		function()
-		{
-			$( '#' + ID ).fadeOut();
-		}
-	);
 })();
