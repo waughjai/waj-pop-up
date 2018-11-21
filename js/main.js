@@ -8,5 +8,5 @@
 		'<p>We wish you a Happy Thanksgiving!</p>';
 	document.body.appendChild( div );
 
-	$( '#' . ID ).click( function() { $( this ).fade(); } );
+	$( '#' . ID ).click( function() { $( this ).fadeOut(); } );
 })();

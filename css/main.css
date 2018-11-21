@@ -8,3 +8,14 @@
 	background-color: rgba( 128, 128, 128, .5 );
 	z-index: 255;
 }
+
+.thanksgiving-pop-up-box
+{
+	position: fixed;
+	width: 50em;
+	max-width: 90%;
+	left: 50%;
+	top: 50%;
+	transform: translate( 50%, 50% );
+	background-color: #fff;
+}
