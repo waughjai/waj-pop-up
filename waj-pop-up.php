@@ -37,7 +37,7 @@
 								'wp_footer',
 								function()
 								{
-									wp_register_script( 'waj-pop-up', $this->getFileURI( SCRIPT_LOCAL ), [], $this->getFileVersion( SCRIPT_LOCAL ) );
+									wp_register_script( 'waj-pop-up', $this->getFileURI( self::SCRIPT_LOCAL ), [], $this->getFileVersion( self::SCRIPT_LOCAL ) );
 									wp_enqueue_script( 'waj-pop-up' );
 								}
 							);
