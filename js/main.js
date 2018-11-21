@@ -8,12 +8,5 @@
 		'<p>We wish you a Happy Thanksgiving!</p>';
 	document.body.appendChild( div );
 
-	document.getElementById( ID ).addEventListener
-	(
-		'click',
-		function( e )
-		{
-			document.body.removeChild( e.currentTarget );
-		}
-	);
+	$( '#' . ID ).click( function( this ) { $( this ).fade(); } );
 })();
