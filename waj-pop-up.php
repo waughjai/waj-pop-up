@@ -62,7 +62,7 @@
 			private function printContent() : void
 			{
 				?>
-					<div id="<?= self::ID; ?>">
+					<div id="<?= self::ID; ?>" class="<?= self::ID; ?>">
 						<div id="<?= $this->classFromID( 'box' ); ?>" class="<?= $this->classFromID( 'box' ); ?>">
 							<h2>Lincoln South Food Hall will be closed all day this Thanksgiving</h2>
 							<img class="<?= $this->classFromID( 'img' ); ?>" src="<?= $this->getFileURI( 'img/thankful-baguette.jpg' ) . '?m=' . $this->getFileVersion( 'img/thankful-baguette.jpg' ); ?>" alt="">
