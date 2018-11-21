@@ -58,6 +58,20 @@
 				);
 			}
 
+			private function printContent() : void
+			{
+				?>
+					<div id="<?= self::ID; ?>">
+						<div id="<?= $this->classFromID( 'box' ); ?>" class="<?= $this->classFromID( 'box' ); ?>">
+							<h2>Lincoln South Food Hall will be closed all day this Thanksgiving</h2>
+							<img class="<?= $this->classFromID( 'img' ); ?>" src="<?= $this->getFileURI( 'img/thankful-baguette.jpg' ) . '?m=' . $this->getFileVersion( 'img/thankful-baguette.jpg' ); ?>" alt="">
+							<p>We wish you a Happy Thanksgiving!</p>
+							<button id="<?= $this->classFromID( 'close' ); ?>" class="<?= $this->classFromID( 'close' ); ?>">Close message</button>
+						</div>
+					</div>
+				<?php
+			}
+
 			private function getFileURI( string $local ) : string
 			{
 				return plugins_url( $local, __FILE__ );
@@ -73,7 +87,13 @@
 				return plugin_dir_path( __FILE__ ) . $local;
 			}
 
+			private function classFromID( string $type ) : string
+			{
+				return self::ID . '-' . $type;
+			}
+
 			const SCRIPT_LOCAL = 'js/main.js';
 			const STYLE_LOCAL  = 'css/main.css';
+			const ID = 'thanksgiving-pop-up';
 		}
 	}
