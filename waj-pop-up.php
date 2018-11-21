@@ -33,7 +33,7 @@
 						wp_register_script( 'waj-pop-up', $this->getScriptURI() );
 						wp_enqueue_script( 'waj-pop-up' );
 					}
-				)
+				);
 			}
 
 			private function loadStyle() : void
